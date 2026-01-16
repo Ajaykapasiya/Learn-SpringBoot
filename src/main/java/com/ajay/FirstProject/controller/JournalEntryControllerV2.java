@@ -18,7 +18,7 @@ public class JournalEntryControllerV2 {
 
     @GetMapping()
     public List<JournalEntry> getAll(){
-    return null;
+        return journalEntryService.getAll();
     }
 
     @PostMapping
@@ -42,7 +42,7 @@ public class JournalEntryControllerV2 {
 
     @PutMapping("/id/{id}")
     public  JournalEntry updateJournalById(@PathVariable String id, @RequestBody JournalEntry myEntry) {
-   return null;
+        return null;
     }
 
 }
