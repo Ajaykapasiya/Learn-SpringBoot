@@ -1,6 +1,4 @@
 package com.ajay.FirstProject.controller;
-import java.time.LocalDateTime;
-import java.util.*;
 
 import com.ajay.FirstProject.entity.JournalEntry;
 import com.ajay.FirstProject.service.JournalEntryService;
@@ -10,9 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
 @RestController
-@RequestMapping("/path")
-public class JournalEntryControllerV2 {
+@RequestMapping("/user")
+public class UserController {
 
     @Autowired
     private JournalEntryService journalEntryService;
