@@ -3,6 +3,7 @@ package com.ajay.FirstProject.entity;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 import org.bson.types.ObjectId;
@@ -17,6 +18,7 @@ import java.util.List;
 @Document(collection = "journal_entries")
 @Getter
 @Setter
+@NoArgsConstructor
 
 public class JournalEntry {
 

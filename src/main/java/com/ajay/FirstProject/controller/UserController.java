@@ -28,14 +28,16 @@ public class UserController {
 
 
     @PostMapping
-    public void createUser(@RequestBody User user){
-    userservice.saveEntry(user);
+    public ResponseEntity<User> createUser(@RequestBody User user){
+        userservice.saveEntry(user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
 
-@PutMapping
-    public ResponseEntity<?> updateUser(@RequestBody User user){
-        User userInDb = userservice.findByUserName(user.getUserName());
+
+    @PutMapping("/{userName}")
+    public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable String userName){
+        User userInDb = userservice.findByUserName(userName);
         if (userInDb != null){
             userInDb.setUserName(user.getUserName());
             userInDb.setPassword(user.getPassword());

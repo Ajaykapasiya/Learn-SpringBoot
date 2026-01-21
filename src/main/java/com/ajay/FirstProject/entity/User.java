@@ -21,10 +21,11 @@ public class User {
 
     @Id
     private ObjectId id;
+
     @Indexed(unique = true)
-    @NonNull
-    private String UserName;
-    @NonNull
+
+    private String userName;
+
     private String password;
     @DBRef
     private List<JournalEntry> journalEntries = new ArrayList<>();
